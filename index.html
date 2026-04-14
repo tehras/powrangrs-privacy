@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PowRangrs — Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1.25rem;
+    line-height: 1.6;
+    color: #222;
+    background: #fafafa;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #eee; background: #111; }
+    a { color: #6cb6ff; }
+    code { background: #222; }
+  }
+  h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2rem; }
+  p, li { font-size: 1rem; }
+  code { background: #eee; padding: 0 0.25rem; border-radius: 3px; }
+  .updated { color: #888; font-size: 0.9rem; margin-top: 0; }
+  hr { margin: 2rem 0; border: none; border-top: 1px solid #ccc; }
+</style>
+</head>
+<body>
+
+<h1>PowRangrs — Privacy Policy</h1>
+<p class="updated">Last updated: April 14, 2026</p>
+
+<p>
+  PowRangrs is a personal game-session scheduling app for small teams. This
+  page explains what information the app collects, how it's used, and how you
+  can have it removed. If anything here is unclear, contact me at
+  <strong>YOUR_EMAIL@example.com</strong>.
+</p>
+
+<h2>What we collect</h2>
+<ul>
+  <li>
+    <strong>Google account profile</strong> — when you sign in with Google,
+    we receive your email address, display name, profile picture URL, and
+    Google account identifier. This is how you're identified in the app.
+  </li>
+  <li>
+    <strong>Session activity</strong> — which team you belong to, the game
+    sessions you're invited to, and whether you accepted, declined, or
+    marked yourself as maybe for each one.
+  </li>
+  <li>
+    <strong>Push notification token</strong> — when you enable notifications,
+    we store a Firebase Cloud Messaging device token so the server can send
+    you a message when a teammate schedules or responds to a session.
+  </li>
+  <li>
+    <strong>Steam account ID (optional)</strong> — if you choose to link
+    your Steam account, we store your public SteamID64. It's only used to
+    look up your Counter-Strike 2 match history via Leetify's public API
+    so the app can show you post-session match stats. We never store or
+    see your Steam password or anything from your Steam account beyond
+    your public SteamID64.
+  </li>
+  <li>
+    <strong>CS2 match data fetched on your behalf</strong> — for sessions
+    that happened in a 6-hour window around their scheduled time, we cache
+    match metadata returned by Leetify (map, score, per-player kills,
+    deaths, assists, damage, Leetify rating) so the Match Detail screen
+    doesn't have to re-fetch on every open. This data is publicly exposed
+    by Leetify for any Steam profile configured as public.
+  </li>
+  <li>
+    <strong>Server logs</strong> — standard HTTP request logs (timestamp,
+    request path, response status, originating IP) are kept on our hosting
+    provider for operational and debugging purposes.
+  </li>
+</ul>
+
+<h2>What we don't collect</h2>
+<ul>
+  <li>Advertising identifiers</li>
+  <li>Analytics beyond basic server logs (no Google Analytics, Firebase Analytics, or similar)</li>
+  <li>Your contacts, location, microphone, camera, or files</li>
+  <li>Anything from Steam beyond your public SteamID64</li>
+</ul>
+
+<h2>How we use it</h2>
+<p>
+  Everything we collect is used to make the app work: signing you in,
+  showing you the sessions you care about, notifying you when a teammate
+  takes action, and displaying CS2 stats from games you played. We do not
+  sell any of your data, run ads against it, or share it with third
+  parties for marketing.
+</p>
+
+<h2>Who we share it with</h2>
+<p>
+  PowRangrs talks to three external services to deliver its features:
+</p>
+<ul>
+  <li>
+    <strong>Google (Sign-In and Firebase Cloud Messaging)</strong> — to
+    authenticate you and deliver push notifications. Governed by
+    <a href="https://policies.google.com/privacy">Google's privacy policy</a>.
+  </li>
+  <li>
+    <strong>Leetify</strong> — to fetch CS2 match details for linked Steam
+    accounts via their public API. Governed by
+    <a href="https://leetify.com/privacy-policy">Leetify's privacy policy</a>.
+    We only send your SteamID64 as a query parameter; no other information
+    about you is shared.
+  </li>
+  <li>
+    <strong>DigitalOcean</strong> — our application server and managed
+    Postgres database are hosted on DigitalOcean App Platform.
+  </li>
+</ul>
+
+<h2>Where your data lives</h2>
+<p>
+  Your data is stored in a managed PostgreSQL database hosted on
+  DigitalOcean (NYC region). Traffic between the app and the server is
+  encrypted with HTTPS. The server uses a random HMAC secret to sign the
+  short-lived token used during Steam OpenID linking so it can't be
+  tampered with in transit.
+</p>
+
+<h2>How long we keep it</h2>
+<p>
+  Your account and any data tied to it is kept while the account is
+  active. Cached CS2 match data is kept indefinitely so past sessions
+  don't lose their stats, but it can be deleted along with your account
+  on request. Server request logs are rotated automatically by the
+  hosting provider.
+</p>
+
+<h2>Deleting your data</h2>
+<p>
+  To have your account and all associated data deleted, email
+  <strong>YOUR_EMAIL@example.com</strong> from the Google account you
+  signed in with. Deletions are performed manually within a few days;
+  you'll get a confirmation when it's done.
+</p>
+
+<h2>Children</h2>
+<p>
+  PowRangrs is not directed at children under 13. If you're a parent or
+  guardian and believe your child has provided personal information to
+  the app, please contact me and I'll delete it.
+</p>
+
+<h2>Changes to this policy</h2>
+<p>
+  If anything here changes materially — new data collected, new third
+  parties involved, new retention policies — this page will be updated
+  and the "last updated" date at the top will change.
+</p>
+
+<h2>Contact</h2>
+<p>
+  Questions, concerns, or deletion requests: <strong>YOUR_EMAIL@example.com</strong>.
+</p>
+
+<hr>
+<p class="updated">PowRangrs is a personal project. Not affiliated with Valve, Steam, Counter-Strike, Leetify, or any other third-party service referenced above.</p>
+
+</body>
+</html>
